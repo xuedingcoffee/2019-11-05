@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    
+    // //Function的原型指向的是自己的原型
+
+    // function fn(){
+
+    // }
+    // Function.prototype.a=10
+
+    // //console.dir(Function)
+ 
+
+    // console.log(fn.a)   //10    为什么为10？？？   1.fn是一个实例  2. 实例就有原型链  fn._proto_   3.  实例的原型链就等于构造函数的原型fn._proto_=Function prototype
+
+    // console.log(Function.a)  //10   为什么为10？？？   1.Function找不到a  2.找不到就去通过它的原型链Function_proto_找到了自己的原型Function_prototype_
+
+      Function.prototype.a=10
+      function ff(){
+
+
+      }
+      ff.prototype.a=20
+
+      console.log(ff.a)
+
+       //以上输出为10   为什么为10？？？   1.首先要输出的ff的角色为实例   2.实例就有proto即ff._proto   3.对应的构造函数原型就为Function.prototypr
+       //console.log(new ff().a)   输出为20   为什么为20？？？  很简单，构造函数下的原型下的属性只给他的实例化对象使用new ff()为实例化对象
+    
+    
+    </script>
+    
+</body>
+</html>
